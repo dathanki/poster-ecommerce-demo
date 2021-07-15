@@ -13,12 +13,11 @@ GoogleProvider.setCustomParameters({ prompt: 'select_account' });
 
 export const signInWithGoogle = () => auth.signInWithPopup(GoogleProvider);
 
-export const handUserProfile = async (userAuth, additionalData) => {
+export const handleUserProfile = async (userAuth, additionalData) => {
     if (!userAuth) return;
     const { uid } = userAuth;
 
     const userRef = firestore.doc(`users/${uid}`);
-
     const snapshot = await userRef.get();
 
     if (!snapshot.exists) {

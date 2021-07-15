@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
-import { auth, handUserProfile } from './firebase/utils';
+import { auth, handleUserProfile } from './firebase/utils';
 
 // layouts
 import MainLayout from './layouts/MainLayout';
@@ -31,7 +31,7 @@ class App extends Component {
   componentDidMount() {
     this.authListener = auth.onAuthStateChanged( async userAuth => {
       if (userAuth) {
-        const userRef = await handUserProfile(userAuth);
+        const userRef = await handleUserProfile(userAuth);
         userRef.onSnapshot(snapshot => {
           this.setState({
             currentUser: {
@@ -68,7 +68,7 @@ class App extends Component {
               <Homepage />
             </HomepageLayout>
           )} />
-          <Route path="/Registration" render={() => (
+          <Route path="/Registration" render={() => currentUser ? <Redirect to="/" /> : (
             <MainLayout currentUser={currentUser}>
               <Registration />
             </MainLayout>
