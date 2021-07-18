@@ -10,6 +10,7 @@ import HomepageLayout from './layouts/HomepageLayout';
 import Homepage from './pages/Homepage';
 import Registration from './pages/Registration';
 import Login from './pages/Login';
+import Recovery from './pages/Recovery';
 import './default.scss';
 
 
@@ -29,7 +30,7 @@ class App extends Component {
   authListener = null;
 
   componentDidMount() {
-    this.authListener = auth.onAuthStateChanged( async userAuth => {
+    this.authListener = auth.onAuthStateChanged(async userAuth => {
       if (userAuth) {
         const userRef = await handleUserProfile(userAuth);
         userRef.onSnapshot(snapshot => {
@@ -79,6 +80,11 @@ class App extends Component {
                 <Login />
               </MainLayout>
             )} />
+          <Route path="/Recovery" render={() => (
+            <MainLayout>
+              <Recovery />
+            </MainLayout>
+          )} />
         </Switch>
       </div>
     );
