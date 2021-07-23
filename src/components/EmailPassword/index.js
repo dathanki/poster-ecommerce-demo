@@ -82,5 +82,4 @@ const mapState = ({ user }) => ({
         );
     }
 
-
 export default EmailPassword;
