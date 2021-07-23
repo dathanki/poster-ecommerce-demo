@@ -42,7 +42,7 @@ const mapState = ({ user }) => ({
     
     
         const configAuthWrapper = {
-            headline: 'Email Password'
+            headline: 'What\'s your Email?'
         };
 
         return (
@@ -69,15 +69,11 @@ const mapState = ({ user }) => ({
                             placeholder="Email"
                             handleChange={e => setEmail(e.target.value)}
                         />
-
                         <Button type="submit" >
-                            Email password
+                            Send me a Reset link
                         </Button>
-
                     </form>
                 </div>
-
-
             </AuthWrapper>
         );
     }

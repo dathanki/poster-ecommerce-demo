@@ -27,7 +27,6 @@ export const signUpUserStart = userCredentials => ({
   payload: userCredentials
 });
 
-
 export const userError = err => ({
   type: userTypes.USER_ERROR,
   payload: err
@@ -43,7 +42,6 @@ export const resetPasswordSuccess = () => ({
   payload: true
 });
 
-
 export const resetUserState = () => ({
   type: userTypes.RESET_USER_STATE
 });
@@ -51,4 +49,3 @@ export const resetUserState = () => ({
 export const googleSignInStart = () => ({
   type: userTypes.GOOGLE_SIGN_IN_START
 });
-

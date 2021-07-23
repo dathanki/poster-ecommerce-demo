@@ -29,7 +29,6 @@ export function* emailSignIn({ payload: { email, password } }) {
     }
 }
 
-
 export function* onEmailSignInStart() {
     yield takeLatest(userTypes.EMAIL_SIGN_IN_START, emailSignIn);
 }
@@ -60,7 +59,6 @@ export function* signOutUser() {
         // console.log(err);
     }
 }
-
 
 export function* onSignOutUserStart() {
     yield takeLatest(userTypes.SIGN_OUT_USER_START, signOutUser);
@@ -97,7 +95,6 @@ export function* onSignUpUserStart() {
 
 export function* resetPassword({ payload: { email } }) {
 
-
     try {
         yield call(handleResetPasswordAPI, email);
         yield put(
@@ -110,7 +107,6 @@ export function* resetPassword({ payload: { email } }) {
         );
     }
 }
-
 
 export function* onResetPasswordStart() {
     yield takeLatest(userTypes.RESET_PASSWORD_START, resetPassword);
