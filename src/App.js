@@ -25,6 +25,7 @@ import Login from './pages/Login';
 import Recovery from './pages/Recovery';
 import Dashboard from './pages/Dashboard';
 import Admin from './pages/Admin';
+import Search from './pages/Search';
 import './default.scss';
 
 const App = props => {
@@ -43,6 +44,11 @@ const App = props => {
           <HomepageLayout>
             <Homepage />
           </HomepageLayout>
+        )} />
+        < Route path="/Search" render={() => (
+          <MainLayout>
+            <Search />
+          </MainLayout>
         )} />
         <Route path="/Registration" render={() => (
           <MainLayout>
@@ -71,7 +77,7 @@ const App = props => {
             <AdminLayout>
               <Admin />
             </AdminLayout>
-          </WithAdminAuth>
+          </WithAdminAuth>            
         )} />
       </Switch>
     </div>
