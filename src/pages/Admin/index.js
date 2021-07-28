@@ -16,7 +16,7 @@ const Admin = props => {
   const { products } = useSelector(mapState);
   const dispatch = useDispatch();
   const [hideModal, setHideModal] = useState(true);
-  const [productCategory, setProductCategory] = useState('airpodCases');
+  const [productCategory, setProductCategory] = useState('airpodcases');
   const [productName, setProductName] = useState('');
   const [productThumbnail, setProductThumbnail] = useState('');
   const [productPrice, setProductPrice] = useState(0);
@@ -83,15 +83,15 @@ const Admin = props => {
             <FormSelect
               label="Category"
               options={[{
-                value: "airpodCases",
+                value: "airpodcases",
                 name: "Airpod Cases",
               }, {
                 value: "posters",
                 name: "Posters"
               }
                 , {
-                value: "phoneCases",
-                name: "Phone Cases"
+                value: "iphonecases",
+                name: "iPhone Cases"
               }]}
               handleChange={e => setProductCategory(e.target.value)}
             />
