@@ -18,18 +18,18 @@ const Product = ({
     return (
         <div className="product">
             <div className="thumb">
-            <Link to={`/product/${documentID}`}>
-          <img src={productThumbnail} alt={productName} />
-        </Link>
+                <Link to={`/product/${documentID}`}>
+                    <img src={productThumbnail} alt={productName} />
+                </Link>
             </div>
 
             <div className="details">
                 <ul>
                     <li>
                         <span className="name">
-                        <Link to={`/product/${documentID}`}>
-                {productName}
-              </Link>
+                            <Link to={`/product/${documentID}`}>
+                                {productName}
+                            </Link>
                         </span>
                     </li>
                     <li>

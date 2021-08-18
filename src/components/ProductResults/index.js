@@ -32,7 +32,7 @@ const ProductResults = ({ }) => {
 
     if (!Array.isArray(data)) return null;
     if (data.length < 1) {
-        return (
+      return (
             <div className="products">
                 <p>
                     No search results.
@@ -95,13 +95,11 @@ const ProductResults = ({ }) => {
                             </div>
                         );
                     const configProduct = {
-                        productThumbnail,
-                        productName,
-                        productPrice
+                        ...product
                     };
 
                     return (
-                        <Product {...configProduct} />
+                        <Product key={pos} {...configProduct} />
                     );
                 })}
             </div>

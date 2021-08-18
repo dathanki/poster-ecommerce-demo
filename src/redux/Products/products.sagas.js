@@ -7,20 +7,11 @@ import {
 } from './products.helpers';
 import productsTypes from './products.types';
 
-export function* addProduct({ payload: {
-    productCategory,
-    productName,
-    productThumbnail,
-    productPrice
-} }) {
-
+export function* addProduct({ payload }) {
     try {
         const timestamp = new Date();
         yield handleAddProduct({
-            productCategory,
-            productName,
-            productThumbnail,
-            productPrice,
+            ...payload,
             productAdminUID: auth.currentUser.uid,
             createdDate: timestamp
         });
@@ -37,7 +28,6 @@ export function* addProduct({ payload: {
 export function* onAddProductStart() {
     yield takeLatest(productsTypes.ADD_NEW_PRODUCT_START, addProduct);
 }
-
 
 export function* fetchProducts({ payload }) {
     try {
