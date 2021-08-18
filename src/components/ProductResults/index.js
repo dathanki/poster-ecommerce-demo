@@ -73,8 +73,6 @@ const ProductResults = ({ }) => {
         onLoadMoreEvent: handleLoadMore,
     };
 
-
-
     return (
         <div className="products">
             <h1>

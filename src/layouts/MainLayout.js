@@ -12,7 +12,6 @@ const MainLayout = props => {
             <Footer />
         </div>
     );
-
 };
 
 export default MainLayout;
