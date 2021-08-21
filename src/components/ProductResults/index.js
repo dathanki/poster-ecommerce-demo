@@ -90,7 +90,7 @@ const ProductResults = ({ }) => {
                                     in loading the products because
                                     either the price, image or name is invalid
                                     in one or more product listings.<br /><br />
-                                    <b>Please recheck all producct listings.</b>
+                                    <b>Please recheck all product listings.</b>
                                 </p>
                             </div>
                         );
@@ -99,7 +99,7 @@ const ProductResults = ({ }) => {
                     };
 
                     return (
-                        <Product key={pos} {...configProduct} />
+                        <Product {...configProduct} />
                     );
                 })}
             </div>

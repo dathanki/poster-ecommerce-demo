@@ -1,7 +1,8 @@
 import React from 'react';
-import ShopPosters from './../../assets/shopPoster.jpg';
+import ShopPosters from './../../assets/shopPoster.png';
 import ShopPhonecases from './../../assets/shopPhonecases.jpg';
 import ShopAirpodcases from './../../assets/shopAirpodcases.jpg';
+// import { Link } from 'react-router-dom';
 import './styles.scss';
 
 
@@ -15,9 +16,12 @@ const Directory = props => {
                         backgroundImage: `url(${ShopAirpodcases})`
                     }}
                 >
-                    <a>
-                        Shop Airpod cases
-                    </a>
+                    {/* <Link to="/Search/airpodcases"> */}
+                        <a href="/Search/airpodcases">
+                            Shop Airpod cases
+                        </a>
+                    {/* </Link> */}
+
                 </div>
                 <div
                     className="item"
@@ -25,9 +29,11 @@ const Directory = props => {
                         backgroundImage: `url(${ShopPosters})`
                     }}
                 >
-                    <a>
+                    {/* <Link to="/Search/posters"> */}
+                    <a href="/Search/posters">
                         Shop Posters
                     </a>
+                    {/* </Link> */}
                 </div>
                 <div
                     className="item"
@@ -35,9 +41,12 @@ const Directory = props => {
                         backgroundImage: `url(${ShopPhonecases})`
                     }}
                 >
-                    <a>
-                        Shop Phone cases
-                    </a>
+                    {/* <Link to="/Search/iphonecases"> */}
+                    <a href="/Search/iphonecases">
+                            Shop Phone cases
+                        </a>
+                    {/* </Link> */}
+
                 </div>
             </div>
         </div>

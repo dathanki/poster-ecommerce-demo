@@ -27,6 +27,7 @@ import Dashboard from './pages/Dashboard';
 import Admin from './pages/Admin';
 import Search from './pages/Search';
 import ProductDetails from './pages/ProductDetails';
+import Cart from './pages/Cart';
 import './default.scss';
 
 const App = props => {
@@ -61,6 +62,11 @@ const App = props => {
             <ProductDetails />
           </MainLayout>
         )} />
+        <Route path="/Cart" render={() => (
+          <MainLayout>
+            <Cart />
+          </MainLayout>
+        )} />
         <Route path="/Registration" render={() => (
           <MainLayout>
             <Registration />
@@ -88,7 +94,7 @@ const App = props => {
             <AdminLayout>
               <Admin />
             </AdminLayout>
-          </WithAdminAuth>            
+          </WithAdminAuth>
         )} />
       </Switch>
     </div>
