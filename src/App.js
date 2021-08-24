@@ -28,6 +28,7 @@ import Admin from './pages/Admin';
 import Search from './pages/Search';
 import ProductDetails from './pages/ProductDetails';
 import Cart from './pages/Cart';
+import Payment from './pages/Payment';
 import './default.scss';
 
 const App = props => {
@@ -66,6 +67,13 @@ const App = props => {
           <MainLayout>
             <Cart />
           </MainLayout>
+        )} />
+        <Route path="/Payment" render={() => (
+          <WithAuth>
+            <MainLayout>
+              <Payment />
+            </MainLayout>
+          </WithAuth>
         )} />
         <Route path="/Registration" render={() => (
           <MainLayout>
