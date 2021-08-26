@@ -29,6 +29,7 @@ import Search from './pages/Search';
 import ProductDetails from './pages/ProductDetails';
 import Cart from './pages/Cart';
 import Payment from './pages/Payment';
+import Order from './pages/Order';
 import './default.scss';
 
 const App = props => {
@@ -95,7 +96,15 @@ const App = props => {
           <WithAuth>
             <DashboardLayout>
               <Dashboard />
-            </DashboardLayout>             </WithAuth>
+            </DashboardLayout>
+          </WithAuth>
+        )} />
+        <Route path="/Order/:orderID" render={() => (
+          <WithAuth>
+            <DashboardLayout>
+              <Order />
+            </DashboardLayout>
+          </WithAuth>
         )} />
         <Route path="/Admin" render={() => (
           <WithAdminAuth>
