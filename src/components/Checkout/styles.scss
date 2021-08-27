@@ -18,6 +18,7 @@
   .cart {
     max-width: 100rem;
     margin: 0 auto;
+
     table {
       width: 100%;
     }
@@ -27,18 +28,18 @@
   .cart {
     width: 100%;
     text-align: left;
-  }
-  th,
-  td {
-    width: 22%;
-    // text-align: center;
-  }
-}
 
-.cartItem {
-  td img {
-    display: block;
-    width: 100%;
+    th,
+    td {
+      width: 22%;
+    }
+  }
+
+  .cartItem {
+    td img {
+      display: block;
+      width: 100%;
+    }
   }
 
   .cartBtns {

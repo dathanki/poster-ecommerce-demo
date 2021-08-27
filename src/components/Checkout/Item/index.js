@@ -27,7 +27,7 @@ const Item = (product) => {
     }
 
     const handleReduceItem = (product) => {
-        dispatch (
+        dispatch(
             reduceCartItem(product)
         );
     }
@@ -52,7 +52,6 @@ const Item = (product) => {
                         </span>
                         <span className="cartBtn"
                             onClick={() => handleAddProduct(product)}>
-
                             {` >`}
                         </span>
                     </td>
@@ -60,7 +59,7 @@ const Item = (product) => {
                         C${productPrice}
                     </td>
                     <td align="center">
-                        <span className="cartBtn" onClick={() => handleRemoveCartItem(documentID)}>
+                        <span className="cartBtn remove" onClick={() => handleRemoveCartItem(documentID)}>
                             <b>
                                 X
                             </b>
@@ -68,9 +67,8 @@ const Item = (product) => {
                     </td>
                 </tr>
             </tbody>
-
         </table>
     );
-};
+}
 
 export default Item;

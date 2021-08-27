@@ -1,18 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
-import { useHistory } from 'react-router';
+import { Link, useHistory } from 'react-router-dom';
 import { emailSignInStart, googleSignInStart } from './../../redux/User/user.actions';
+
 import './styles.scss';
 
-import AuthWrapper from '../AuthWrapper';
+import AuthWrapper from './../AuthWrapper';
 import FormInput from './../Forms/FormInput';
 import Button from './../Forms/Button';
 
 const mapState = ({ user }) => ({
     currentUser: user.currentUser
-  });
-  
+});
 
 const SignIn = props => {
     const dispatch = useDispatch();
@@ -21,13 +20,13 @@ const SignIn = props => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('')
 
-  useEffect(() => {
-    if (currentUser) {
-      resetForm();
-      history.push('/');
-    }
+    useEffect(() => {
+        if (currentUser) {
+            resetForm();
+            history.push('/');
+        }
 
-  }, [currentUser]);
+    }, [currentUser]);
 
     const resetForm = () => {
         setEmail('');
@@ -41,8 +40,8 @@ const SignIn = props => {
 
     const handleGoogleSignIn = () => {
         dispatch(googleSignInStart());
-      }
-      
+    }
+
     const configAuthWrapper = {
         headline: 'LogIn'
     };
@@ -50,7 +49,7 @@ const SignIn = props => {
     return (
         <AuthWrapper {...configAuthWrapper}>
             <div className="formWrap">
-                <form onSubmit={handleSubmit} >
+                <form onSubmit={handleSubmit}>
 
                     <FormInput
                         type="email"
@@ -68,26 +67,32 @@ const SignIn = props => {
                         handleChange={e => setPassword(e.target.value)}
                     />
 
-                    <Button type="submit" >
+                    <Button type="submit">
                         LogIn
                     </Button>
+
                     <div className="socialSignIn">
                         <div className="row">
-                        <Button onClick={handleGoogleSignIn}>
+                            <Button onClick={handleGoogleSignIn}>
                                 Sign in with Google
                             </Button>
                         </div>
-                        <div className="links">
-                            <Link to="/Recovery" >
-                                Reset Password
-                            </Link>
-                        </div>
                     </div>
+
+                    <div className="links">
+                        <Link to="/registration">
+                            Register
+                        </Link>
+                        {` | `}
+                        <Link to="/recovery">
+                            Reset Password
+                        </Link>
+                    </div>
+
                 </form>
             </div>
         </AuthWrapper>
     );
 }
-
 
 export default SignIn;

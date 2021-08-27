@@ -124,10 +124,7 @@ const PaymentDetails = () => {
           });
 
       })
-
-
     });
-
   };
 
   const configCardElement = {

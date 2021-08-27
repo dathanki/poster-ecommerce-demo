@@ -44,17 +44,18 @@ const App = props => {
     <div className="App">
       <AdminToolbar />
       <Switch>
-        <Route exact={true} path="/" render={() => (
+        <Route exact path="/" render={() => (
           <HomepageLayout>
             <Homepage />
           </HomepageLayout>
-        )} />
-        < Route exact path="/Search" render={() => (
+        )}
+        />
+        <Route exact path="/Search" render={() => (
           <MainLayout>
             <Search />
           </MainLayout>
         )} />
-        < Route path="/Search/:filterType" render={() => (
+        <Route path="/Search/:filterType" render={() => (
           <MainLayout>
             <Search />
           </MainLayout>
